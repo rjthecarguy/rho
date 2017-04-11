@@ -21,11 +21,12 @@ export class MyApp {
 
 this.zone = new NgZone({});
     firebase.initializeApp({
-      apiKey: "AIzaSyBDKTJgc1u4CVvJCH9uKPftNG-PMtXYkW0",
-      authDomain: "event-97c4b.firebaseapp.com",
-      databaseURL: "https://event-97c4b.firebaseio.com",
-      storageBucket: "event-97c4b.appspot.com",
-      messagingSenderId: "150439043340"
+      apiKey: "AIzaSyDU3VBEJmRdNrnjBB9wgM3MQqp1NDdImw4",
+    authDomain: "rho-app.firebaseapp.com",
+    databaseURL: "https://rho-app.firebaseio.com",
+    projectId: "rho-app",
+    storageBucket: "rho-app.appspot.com",
+    messagingSenderId: "224120617245"
     });
 
     this.zone = new NgZone({});
