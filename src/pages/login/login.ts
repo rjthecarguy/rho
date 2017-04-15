@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 import { EmailValidator } from '../../validators/email';
 
@@ -18,9 +19,19 @@ import { EmailValidator } from '../../validators/email';
 export class LoginPage {
   public loginForm;
   loading: any;
+  tabBar:any;
+
+
+   
+
+  
+
+ 
 
   constructor(public nav: NavController, public authData: AuthData, public formBuilder: FormBuilder,
     public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+
+
 
     /**
      * Creates a ControlGroup that declares the fields available, their values and the validators that they are going
@@ -46,7 +57,7 @@ export class LoginPage {
     } else {
       this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then( authData => {
         this.loading.dismiss().then( () => {
-          this.nav.setRoot(HomePage);
+          this.nav.setRoot(TabsPage);
         });
       }, error => {
         this.loading.dismiss().then( () => {
@@ -67,6 +78,23 @@ export class LoginPage {
       this.loading.present();
     }
   }
+
+
+
+
+
+ionViewDidEnter()
+    {
+
+
+      this.tabBar = document.getElementsByClassName("tabbar");
+    console.log("Tab Element:" + this.tabBar.id);
+
+        this.tabBar.style.display = 'none';
+
+    }
+
+
 
   goToSignup(): void {
     this.nav.push(SignupPage);

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { ProfileData } from '../../providers/profile-data';
 import { AuthData } from '../../providers/auth-data';
 import { LoginPage } from '../login/login';
+import { App } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-profile',
@@ -13,7 +15,7 @@ export class ProfilePage {
   public birthDate: string;
 
   constructor(public navCtrl: NavController, public profileData: ProfileData,
-    public authData: AuthData, public alertCtrl: AlertController) {
+    public authData: AuthData, public alertCtrl: AlertController, public app: App) {
   }
 
   ionViewDidEnter(){
@@ -25,7 +27,8 @@ export class ProfilePage {
 
   logOut(){
     this.authData.logoutUser().then(() => {
-      this.navCtrl.setRoot(LoginPage);
+     this.app.getRootNav().setRoot(LoginPage);
+
     });
   }
 

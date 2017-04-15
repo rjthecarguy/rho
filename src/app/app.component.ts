@@ -7,6 +7,7 @@ import firebase from 'firebase';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 @Component({
@@ -36,7 +37,7 @@ this.zone = new NgZone({});
       this.rootPage = LoginPage;
       unsubscribe();
     } else { 
-      this.rootPage = HomePage; 
+      this.rootPage = TabsPage; 
       unsubscribe();
     }
   });     

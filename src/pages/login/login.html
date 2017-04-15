@@ -7,11 +7,17 @@
 </ion-header>
 
 <ion-content padding>
+
+
+  
+
+
+
   <img src="img/mobHeader.png">
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
-    <ion-item>
+    <ion-item >
       <ion-label stacked>Email</ion-label>
       <ion-input #email formControlName="email" type="email" placeholder="Your email address" 
         [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>

@@ -23,6 +23,8 @@ import { ProfileData } from '../providers/profile-data';
 import { TestosteroneData } from '../providers/testosterone-data';
 import { PsaData } from '../providers/psa-data';
 import { HemoData } from '../providers/hemo-data';
+import { App } from 'ionic-angular';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { HemoData } from '../providers/hemo-data';
     ContactPage,
     AboutPage,
     TabsPage
+    
     
   ],
   imports: [
@@ -59,6 +62,7 @@ import { HemoData } from '../providers/hemo-data';
     ContactPage,
     AboutPage,
     TabsPage
+
     ],
   providers: [
     StatusBar,
