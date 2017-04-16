@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-item>
+    <ion-label>Test Date</ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="testDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Result</ion-label>
+    <ion-input [(ngModel)]="testResult" type="number" placeholder="What was the result?"></ion-input>
+  </ion-item>
+
+  
+  <button ion-button block (click)=" createTestosResult(testDate, testResult)">
+    Create Event
+  </button>
+</ion-content>

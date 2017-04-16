@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Testosterone Results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let testosResult of testosteroneResultList">
+      <p>Date: <strong>{{testosResult.date}}</strong></p>
+     <p>Result: <strong>{{testosResult.result}}</strong></p>
+    </ion-item>
+  </ion-list>
+ <button ion-button block color="primary" (click)="newTestosteroneResult()">
+  Add New Result
+</button>
+
+  <button ion-button block color="primary">
+  Graph Test Results
+</button>
+
+</ion-content>
