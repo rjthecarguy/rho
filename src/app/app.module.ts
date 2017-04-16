@@ -15,6 +15,7 @@ import { AboutPage } from '../pages/about/about';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Import providers
 import { AuthData } from '../providers/auth-data';
@@ -23,7 +24,7 @@ import { ProfileData } from '../providers/profile-data';
 import { TestosteroneData } from '../providers/testosterone-data';
 import { PsaData } from '../providers/psa-data';
 import { HemoData } from '../providers/hemo-data';
-import { App } from 'ionic-angular';
+
 
 
 @NgModule({
@@ -40,12 +41,14 @@ import { App } from 'ionic-angular';
     TestosTestCreatePage,
     ContactPage,
     AboutPage,
-    TabsPage
+    TabsPage,
+    
     
     
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
