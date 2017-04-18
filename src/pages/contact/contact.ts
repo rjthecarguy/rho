@@ -34,15 +34,10 @@ export class ContactPage {
 
   	this.submitAttempt = true;
 
-  	console.log(this.contact.value);
+  	  	
+  	if(this.contact.valid) {
 
-  	if(!this.contact.controls.Name.valid) {
-  		console.log("NOT VALID NAME");
-  		console.log(this.submitAttempt);
-  		console.log(this.nameValid);
-  	}
-  		else {
-  			 this.nameValid = true;
+  			 
   			console.log("Valid!!!!");
 
   			this.resetContactForm();
