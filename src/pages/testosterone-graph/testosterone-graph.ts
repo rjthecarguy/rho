@@ -18,12 +18,19 @@ export class TestosteroneGraphPage {
  @ViewChild('barCanvas') barCanvas;
  
     barChart: any;
+    labels: any[];
+    data:any[];
    
 
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+  	this.labels=["1/1/2017", "1/2/2017", "4/8/2017"];
+  	this.data=[90, 170, 80];
+  }
 
    ionViewDidLoad() {
  
@@ -31,10 +38,10 @@ export class TestosteroneGraphPage {
  
             type: 'line',
             data: {
-                labels: ["1/1/2017", "1/2/2017", "4/8/2017"],
+                labels: this.labels,
                 datasets: [{
                     label: '# of Votes',
-                    data: [90, 170, 80],
+                    data: this.data,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
