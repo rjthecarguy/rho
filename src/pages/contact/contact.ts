@@ -45,9 +45,8 @@ export class ContactPage {
   			 this.nameValid = true;
   			console.log("Valid!!!!");
 
-  			this.contact.reset();
-  			this.submitAttempt = false;
-  			this.nameValid = false;
+  			this.resetContactForm();
+  			this.submitComplete = true;
 
 
 
@@ -65,9 +64,19 @@ export class ContactPage {
 
   	// Reset form and clear validation flags on page exit
 
-  	this.contact.reset();
+  	
+  	this.resetContactForm();
+
+  	this.submitComplete = false;
+  }
+
+
+  resetContactForm() {
+	this.contact.reset();
   	this.submitAttempt = false;
   	this.nameValid = false;
+
   }
+
 
 }
