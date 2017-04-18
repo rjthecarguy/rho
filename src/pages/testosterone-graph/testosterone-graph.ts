@@ -45,7 +45,7 @@ this.barChart = new Chart(this.barCanvas.nativeElement, {
                 labels: this.labels,
                 datasets: [{
                     label: 'Expressed as pg/ml',
-                    pointRadius: 10,
+                    pointRadius: 5,
                     pointHitRadius: 30,
                     pointBackgroundColor:'rgba(191, 27, 44, 1)',
                     data: this.data,

@@ -7,12 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>contact</ion-title>
+    <ion-title>Contact Us</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<ion-list no-lines>
+ 
+    <form [formGroup]="contact">
+ 
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input formControlName="Name" type="text"></ion-input>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input formControlName="Email" type="text"></ion-input>
+        </ion-item>
+ 
+ 		<ion-item>
+            <ion-label floating>Message</ion-label>
+            <ion-textarea formControlName="Message" type="text"></ion-textarea>
+        </ion-item>
+        
+ 
+    </form>
+ 
+</ion-list>
+
+<button ion-button full color="primary" (click)="sendForm()">Send</button>
+
 
 </ion-content>
