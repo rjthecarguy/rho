@@ -14,10 +14,14 @@
 
 
 <ion-content padding>
-<ion-list no-lines>
+<ion-list *ngIf=!submitComplete no-lines>
  
     <form [formGroup]="contact">
  
+   		 <ion-item *ngIf="!nameValid && submitAttempt">
+                <p style="color: #ea6153;">Please enter a name.</p>
+            </ion-item>
+
         <ion-item>
             <ion-label floating>Name</ion-label>
             <ion-input formControlName="Name" type="text"></ion-input>
@@ -38,7 +42,7 @@
  
 </ion-list>
 
-<button ion-button full color="primary" (click)="sendForm()">Send</button>
+<button  *ngIf=!submitComplete ion-button full color="primary" (click)="sendForm()">Send</button>
 
 
 </ion-content>

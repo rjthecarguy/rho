@@ -15,6 +15,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactPage {
 
 	contact: FormGroup;
+	submitAttempt: boolean = false;
+	submitComplete: boolean = false;
+	nameValid: boolean = false;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
@@ -28,13 +31,27 @@ export class ContactPage {
   }
 
   sendForm() {
+
+  	this.submitAttempt = true;
+
   	console.log(this.contact.value);
 
-  	if(!this.contact.valid) {
-  		console.log("NOT VALID");
+  	if(!this.contact.controls.Name.valid) {
+  		console.log("NOT VALID NAME");
+  		console.log(this.submitAttempt);
+  		console.log(this.nameValid);
   	}
   		else {
+  			 this.nameValid = true;
   			console.log("Valid!!!!");
+
+  			this.contact.reset();
+  			this.submitAttempt = false;
+  			this.nameValid = false;
+
+
+
+  			
   		}
   }
 
@@ -42,6 +59,15 @@ export class ContactPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactPage');
+  }
+
+  ionViewDidLeave() {
+
+  	// Reset form and clear validation flags on page exit
+
+  	this.contact.reset();
+  	this.submitAttempt = false;
+  	this.nameValid = false;
   }
 
 }
