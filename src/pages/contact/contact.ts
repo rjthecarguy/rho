@@ -24,7 +24,7 @@ export class ContactPage {
 
   		this.contact = formBuilder.group({
         Name: ['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])],
-        Email: [''],
+        Email: ['',Validators.compose([Validators.required])],
         Message: ['']
     });
 

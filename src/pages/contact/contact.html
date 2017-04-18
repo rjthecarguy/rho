@@ -18,15 +18,19 @@
  
     <form [formGroup]="contact">
  
-   		 <ion-item *ngIf="!nameValid && submitAttempt">
+   		 <ion-item *ngIf="!contact.controls.Name.valid && submitAttempt">
                 <p style="color: #ea6153;">Please enter a name.</p>
             </ion-item>
 
-        <ion-item>
+        <ion-item >
             <ion-label floating>Name</ion-label>
             <ion-input formControlName="Name" type="text"></ion-input>
         </ion-item>
  
+         <ion-item *ngIf="!contact.controls.Email.valid && submitAttempt">
+                <p style="color: #ea6153;">Please enter an Email address.</p>
+            </ion-item>
+
         <ion-item>
             <ion-label floating>Email</ion-label>
             <ion-input formControlName="Email" type="text"></ion-input>
