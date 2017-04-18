@@ -8,6 +8,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { TestosteroneResultListPage } from '../pages/testosterone-result-list/testosterone-result-list';
 import { TestosTestCreatePage} from '../pages/testos-test-create/testos-test-create';
+import { TestosteroneGraphPage} from '../pages/testosterone-graph/testosterone-graph';
 import { PsaPage } from '../pages/psa/psa';
 import { HemoPage } from '../pages/hemo/hemo';
 import { ContactPage } from '../pages/contact/contact';
@@ -42,6 +43,7 @@ import { HemoData } from '../providers/hemo-data';
     ContactPage,
     AboutPage,
     TabsPage,
+    TestosteroneGraphPage
     
     
     
@@ -64,7 +66,8 @@ import { HemoData } from '../providers/hemo-data';
     TestosTestCreatePage,
     ContactPage,
     AboutPage,
-    TabsPage
+    TabsPage,
+    TestosteroneGraphPage
 
     ],
   providers: [

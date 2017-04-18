@@ -1,3 +1,9 @@
+button.pushButton {
+  margin-bottom: 30px !important;
+  height: 60px !important;
+  font-size: 16px !important;
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -24449,4 +24455,12 @@ page-signup .invalid {
 
 page-signup .error-message .item-inner {
   border-bottom: 0 !important;
+}
+
+page-testosterone-graph .ios page-home .scroll-content, page-testosterone-graph .md page-home .scroll-content {
+  background-color: #f4f4f4;
+}
+
+page-testosterone-graph .ios page-home ion-card-header, page-testosterone-graph .md page-home ion-card-header {
+  font-weight: bold;
 }

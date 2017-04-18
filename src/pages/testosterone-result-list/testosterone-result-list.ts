@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TestosteroneData} from '../../providers/testosterone-data';
 import { TestosTestCreatePage} from '../testos-test-create/testos-test-create';
+import { TestosteroneGraphPage} from '../testosterone-graph/testosterone-graph';
 
 @Component({
   selector: 'page-testosterone-result-list',
@@ -42,6 +43,9 @@ newTestosteroneResult() {
  	this.navCtrl.push(TestosTestCreatePage);
   }
 
+goToGraph(){
+  this.navCtrl.push(TestosteroneGraphPage);
+}
 
 
 }
