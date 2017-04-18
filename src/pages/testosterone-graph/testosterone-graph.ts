@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
+import { TestosteroneData} from '../../providers/testosterone-data';
 
 /*
   Generated class for the TestosteroneGraph page.
@@ -20,21 +21,24 @@ export class TestosteroneGraphPage {
     barChart: any;
     labels: any[];
     data:any[];
+    testosteroneResultList: any;
    
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public testosteroneData: TestosteroneData) {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.labels=[];
+  	this.data=[];
 
 
-  	this.labels=["1/1/2017", "1/2/2017", "4/8/2017"];
-  	this.data=[90, 170, 80];
   }
 
-   ionViewDidLoad() {
- 
-        this.barChart = new Chart(this.barCanvas.nativeElement, {
+
+  doGraph(data:any[], labels:any[]) {
+
+
+this.barChart = new Chart(this.barCanvas.nativeElement, {
  
             type: 'line',
             data: {
@@ -72,6 +76,46 @@ export class TestosteroneGraphPage {
             }
  
         });
+
+
+
+  }
+
+
+
+   ionViewDidLoad() {
+
+
+   	 this.testosteroneData. getTestosTestList().on('value', snapshot => {
+      let rawList = [];
+      snapshot.forEach( snap => {
+        rawList.push({
+          id: snap.key,
+          result: snap.val().result,
+          date: snap.val().date,
+        });
+      return false
+      });
+      this.testosteroneResultList = rawList;
+
+         
+      for (let entry of this.testosteroneResultList)	{
+
+      	this.data.push(entry.result);
+      	this.labels.push(entry.date);
+      	
+      	
+      }
+
+      console.log(this.data);
+
+
+    });
+
+
+   this.doGraph(this.data, this.labels);	
+ 
+        
  
 }
 
