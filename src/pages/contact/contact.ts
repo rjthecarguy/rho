@@ -67,9 +67,10 @@ export class ContactPage {
 
 
   resetContactForm() {
+  	
 	this.contact.reset();
   	this.submitAttempt = false;
-  	this.nameValid = false;
+  	
 
   }
 

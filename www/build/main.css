@@ -24328,6 +24328,18 @@ page-contact ion-input, page-contact ion-select, page-contact ion-textarea {
   padding: 5px 10px;
 }
 
+page-contact #thankyou {
+  text-align: center;
+  width: 80%;
+  margin: auto auto;
+  margin-top: 60px;
+}
+
+page-contact #thankyou p {
+  line-height: 1.8em;
+  font-size: 16px;
+}
+
 page-login form {
   margin-bottom: 32px;
 }
