@@ -17,6 +17,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 // Import providers
 import { AuthData } from '../providers/auth-data';
@@ -50,7 +51,7 @@ import { HemoData } from '../providers/hemo-data';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    BrowserModule
+    BrowserModule,HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
