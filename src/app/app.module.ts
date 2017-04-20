@@ -16,6 +16,7 @@ import { AboutPage } from '../pages/about/about';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TesResultModal } from '../pages/tes-result-modal/tes-result-modal';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
@@ -44,7 +45,8 @@ import { HemoData } from '../providers/hemo-data';
     ContactPage,
     AboutPage,
     TabsPage,
-    TestosteroneGraphPage
+    TestosteroneGraphPage,
+    TesResultModal
     
     
     
@@ -68,7 +70,9 @@ import { HemoData } from '../providers/hemo-data';
     ContactPage,
     AboutPage,
     TabsPage,
-    TestosteroneGraphPage
+    TestosteroneGraphPage,
+    TesResultModal
+   
 
     ],
   providers: [

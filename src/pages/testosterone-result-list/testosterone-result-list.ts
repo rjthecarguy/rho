@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { TestosteroneData} from '../../providers/testosterone-data';
 import { TestosTestCreatePage} from '../testos-test-create/testos-test-create';
 import { TestosteroneGraphPage} from '../testosterone-graph/testosterone-graph';
+import { ModalController } from 'ionic-angular';
+import { TesResultModal } from '../tes-result-modal/tes-result-modal';
 
 @Component({
   selector: 'page-testosterone-result-list',
@@ -14,7 +16,15 @@ export class TestosteroneResultListPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public testosteroneData: TestosteroneData) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public testosteroneData: TestosteroneData, public modalCtrl: ModalController) {}
+
+
+
+  openTesResultModal() {
+    let myModal = this.modalCtrl.create(TesResultModal);
+    myModal.present();
+  }
+
 
   ionViewDidEnter() {
 
