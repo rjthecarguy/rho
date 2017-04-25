@@ -3,6 +3,9 @@
     <ion-title>
       BioEdge Home 
     </ion-title>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-buttons end>
      <button (click)="goToProfile()">
   <ion-icon name="person"></ion-icon>
@@ -16,13 +19,13 @@
 
  
 
-<button class="pushButton" ion-button block color="primary" (click)="goToList()">
+<button round class="pushButton topButton" ion-button block color="primary" (click)="goToList()">
   View Testosterone Test Results
 </button>
-<button class="pushButton" ion-button block color="primary" (click)="goToList()">
+<button round class="pushButton" ion-button block color="primary" (click)="goToList()">
   View PSA Test Results
 </button>
-<button class="pushButton" ion-button block color="primary" (click)="goToList()">
+<button round class="pushButton" ion-button block color="primary" (click)="goToList()">
   View Hemoglobin Test Results
 </button>
 
