@@ -19,13 +19,16 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
+  isAuth: boolean;
+
   rootPage: any = HomePage;
 
   navPages: Array<{title: string, component: any}>;
   testInfoPages: Array<{title: string, component: any}>;
   testResultPages: Array<{title: string, component: any}>;
   userPages: Array<{title: string, component: any}>;
-  accountPages: Array<{title: string, component: any}>;
+  loggedPages: Array<{title: string, component: any}>;
+  notLoggedPages: Array<{title: string, component: any}>;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -55,9 +58,12 @@ export class MyApp {
       { title: 'Profile', component: HomePage }
     ];
 
-    this.accountPages = [
-      { title: 'Login', component: HomePage },
+    this.loggedPages = [
       { title: 'logout', component:  HomePage  }
+    ];
+
+    this.notLoggedPages = [
+      { title: 'login', component:  HomePage  }
     ];
 
 
@@ -80,9 +86,11 @@ this.zone = new NgZone({});
         this.zone.run( () => {
     if (!user) {
       this.rootPage = LoginPage;
+      this.isAuth = false;
       unsubscribe();
     } else { 
-      this.rootPage = TabsPage; 
+      this.rootPage = TabsPage;
+      this.isAuth = true; 
       unsubscribe();
     }
   });     

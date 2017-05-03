@@ -26,7 +26,7 @@
       </button>
     </ion-list>
 
-     <ion-list>
+     <ion-list *ngIf="isAuth">
     <ion-list-header class="ionListHeader">
           Test Results
         </ion-list-header>
@@ -35,7 +35,7 @@
       </button>
     </ion-list>
 
-     <ion-list>
+     <ion-list *ngIf="isAuth">
     <ion-list-header class="ionListHeader">
           User
         </ion-list-header>
@@ -44,11 +44,20 @@
       </button>
     </ion-list>
 
-     <ion-list>
+     <ion-list *ngIf="isAuth">
     <ion-list-header class="ionListHeader">
           Account
         </ion-list-header>
-      <button class="buttonIndent" menuClose ion-item *ngFor="let p of accountPages" (click)="openPage(p)">
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of loggedPages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+     <ion-list *ngIf="!isAuth">
+    <ion-list-header class="ionListHeader">
+          Account
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of notLoggedPages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
