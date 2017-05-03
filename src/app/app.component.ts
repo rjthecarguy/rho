@@ -21,15 +21,48 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  navPages: Array<{title: string, component: any}>;
+  testInfoPages: Array<{title: string, component: any}>;
+  testResultPages: Array<{title: string, component: any}>;
+  userPages: Array<{title: string, component: any}>;
+  accountPages: Array<{title: string, component: any}>;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
 
-    this.pages = [
+    this.navPages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component:  TestosteroneResultListPage }
+      { title: 'About Us', component:  HomePage  },
+      { title: 'Contact Us', component: HomePage }
     ];
+
+    this.testInfoPages = [
+      { title: 'Testosterone', component: HomePage },
+      { title: 'Estrogen', component:  HomePage  },
+      { title: 'Hemoglobin', component: HomePage },
+      { title: 'Prostate Specific Antigen (PSA)', component: HomePage }
+    ]
+
+    this.testResultPages = [
+      { title: 'Testosterone', component: HomePage },
+      { title: 'Estrogen', component:  HomePage  },
+      { title: 'Hemoglobin', component: HomePage },
+      { title: 'Prostate Specific Antigen (PSA)', component: HomePage }
+    ]
+
+    this.userPages = [
+      { title: 'Profile', component: HomePage }
+    ];
+
+    this.accountPages = [
+      { title: 'Login', component: HomePage },
+      { title: 'logout', component:  HomePage  }
+    ];
+
+
+
+
 
 
 this.zone = new NgZone({});

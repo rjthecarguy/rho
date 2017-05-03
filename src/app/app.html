@@ -9,7 +9,46 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-list-header class="ionListHeader">
+          Navigate
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of navPages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+     <ion-list>
+    <ion-list-header class="ionListHeader">
+          Test Information
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of testInfoPages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+     <ion-list>
+    <ion-list-header class="ionListHeader">
+          Test Results
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of testResultPages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+     <ion-list>
+    <ion-list-header class="ionListHeader">
+          User
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of userPages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+
+     <ion-list>
+    <ion-list-header class="ionListHeader">
+          Account
+        </ion-list-header>
+      <button class="buttonIndent" menuClose ion-item *ngFor="let p of accountPages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
