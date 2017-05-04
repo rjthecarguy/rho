@@ -27,6 +27,7 @@ import { ProfileData } from '../providers/profile-data';
 import { TestosteroneData } from '../providers/testosterone-data';
 import { PsaData } from '../providers/psa-data';
 import { HemoData } from '../providers/hemo-data';
+import { AuthCheckProvider } from '../providers/auth-check-provider';
 
 
 
@@ -84,7 +85,8 @@ import { HemoData } from '../providers/hemo-data';
     ProfileData,
     TestosteroneData,
     PsaData,
-    HemoData
+    HemoData,
+    AuthCheckProvider
   ]
 })
 export class AppModule {}

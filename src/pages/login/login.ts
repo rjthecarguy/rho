@@ -9,6 +9,8 @@ import { SignupPage } from '../signup/signup';
 import { TabsPage } from '../tabs/tabs';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 import { EmailValidator } from '../../validators/email';
+import { Events } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-login',
@@ -25,7 +27,7 @@ export class LoginPage {
  
 
   constructor(public nav: NavController, public authData: AuthData, public formBuilder: FormBuilder,
-    public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+    public alertCtrl: AlertController, public loadingCtrl: LoadingController, public events: Events) {
 
 
 
@@ -53,6 +55,7 @@ export class LoginPage {
     } else {
       this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then( authData => {
         this.loading.dismiss().then( () => {
+          this.events.publish('Auth:state', true);
           this.nav.setRoot(TabsPage);
         });
       }, error => {

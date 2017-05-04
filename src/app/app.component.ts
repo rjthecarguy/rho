@@ -8,6 +8,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { TestosteroneResultListPage } from '../pages/testosterone-result-list/testosterone-result-list';
 
+import { AuthCheckProvider } from '../providers/auth-check-provider';
+import { Events } from 'ionic-angular';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,10 +21,11 @@ export class MyApp {
   zone: NgZone;
 
 
+  isAuth:boolean;
+
   @ViewChild(Nav) nav: Nav;
 
-  isAuth: boolean;
-
+ 
   rootPage: any = HomePage;
 
   navPages: Array<{title: string, component: any}>;
@@ -31,8 +36,16 @@ export class MyApp {
   notLoggedPages: Array<{title: string, component: any}>;
 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public setAuth:AuthCheckProvider, public events:Events) {
 
+this.events.subscribe('Auth:state', (user) => {
+  // user and time are the same arguments passed in `events.publish(user, time)`
+  this.isAuth = user;
+  
+  
+
+});
+    
 
     this.navPages = [
       { title: 'Home', component: HomePage },
@@ -59,11 +72,11 @@ export class MyApp {
     ];
 
     this.loggedPages = [
-      { title: 'logout', component:  HomePage  }
+      { title: 'Logout', component:  HomePage  }
     ];
 
     this.notLoggedPages = [
-      { title: 'login', component:  HomePage  }
+      { title: 'Login', component:  LoginPage  }
     ];
 
 
@@ -85,12 +98,13 @@ this.zone = new NgZone({});
       const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
         this.zone.run( () => {
     if (!user) {
-      this.rootPage = LoginPage;
-      this.isAuth = false;
+      this.events.publish('Auth:state', false);
+      this.rootPage = HomePage;
       unsubscribe();
     } else { 
+     this.events.publish('Auth:state', true);
       this.rootPage = TabsPage;
-      this.isAuth = true; 
+           
       unsubscribe();
     }
   });     
@@ -104,5 +118,19 @@ this.zone = new NgZone({});
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+
+menuOpened() {
+  console.log(this.isAuth);
+  
+}
+
+
+
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.setRoot(page.component);
   }
 }
