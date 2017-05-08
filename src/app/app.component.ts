@@ -61,7 +61,7 @@ this.events.subscribe('Auth:state', (user) => {
     ]
 
     this.testResultPages = [
-      { title: 'Testosterone', component: HomePage },
+      { title: 'Testosterone', component: TestosteroneResultListPage },
       { title: 'Estrogen', component:  HomePage  },
       { title: 'Hemoglobin', component: HomePage },
       { title: 'Prostate Specific Antigen (PSA)', component: HomePage }
