@@ -6,7 +6,14 @@ import firebase from 'firebase';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
+import { AboutPage} from '../pages/about/about';
+import { ProfilePage} from '../pages/profile/profile';
+import { ContactPage} from '../pages/contact/contact';
 import { TestosteroneResultListPage } from '../pages/testosterone-result-list/testosterone-result-list';
+import { TestosteroneInfo } from '../pages/testosterone-info/testosterone-info';
+import { HemoInfo } from '../pages/hemo-info/hemo-info';
+import { EstrogenInfo } from '../pages/estrogen-info/estrogen-info';
+import { PsaInfo } from '../pages/psa-info/psa-info';
 
 import { AuthCheckProvider } from '../providers/auth-check-provider';
 import { Events } from 'ionic-angular';
@@ -49,15 +56,15 @@ this.events.subscribe('Auth:state', (user) => {
 
     this.navPages = [
       { title: 'Home', component: HomePage },
-      { title: 'About Us', component:  HomePage  },
-      { title: 'Contact Us', component: HomePage }
+      { title: 'About Us', component:  AboutPage },
+      { title: 'Contact Us', component: ContactPage }
     ];
 
     this.testInfoPages = [
-      { title: 'Testosterone', component: HomePage },
-      { title: 'Estrogen', component:  HomePage  },
-      { title: 'Hemoglobin', component: HomePage },
-      { title: 'Prostate Specific Antigen (PSA)', component: HomePage }
+      { title: 'Testosterone', component: TestosteroneInfo },
+      { title: 'Estrogen', component:  EstrogenInfo  },
+      { title: 'Hemoglobin', component: HemoInfo },
+      { title: 'Prostate Specific Antigen (PSA)', component: PsaInfo}
     ]
 
     this.testResultPages = [
@@ -68,7 +75,7 @@ this.events.subscribe('Auth:state', (user) => {
     ]
 
     this.userPages = [
-      { title: 'Profile', component: HomePage }
+      { title: 'Profile', component: ProfilePage }
     ];
 
     this.loggedPages = [

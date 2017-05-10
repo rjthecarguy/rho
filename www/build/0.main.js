@@ -1,13 +1,13 @@
 webpackJsonp([0],{
 
-/***/ 504:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tes_result_modal__ = __webpack_require__(115);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TesResultModalModule", function() { return TesResultModalModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__testosterone_info__ = __webpack_require__(120);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestosteroneInfoModule", function() { return TestosteroneInfoModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16,24 +16,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-var TesResultModalModule = (function () {
-    function TesResultModalModule() {
+var TestosteroneInfoModule = (function () {
+    function TestosteroneInfoModule() {
     }
-    return TesResultModalModule;
+    return TestosteroneInfoModule;
 }());
-TesResultModalModule = __decorate([
+TestosteroneInfoModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_1__tes_result_modal__["a" /* TesResultModal */],
+            __WEBPACK_IMPORTED_MODULE_1__testosterone_info__["a" /* TestosteroneInfo */],
         ],
         imports: [],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_1__tes_result_modal__["a" /* TesResultModal */]
+            __WEBPACK_IMPORTED_MODULE_1__testosterone_info__["a" /* TestosteroneInfo */]
         ]
     })
-], TesResultModalModule);
+], TestosteroneInfoModule);
 
-//# sourceMappingURL=tes-result-modal.module.js.map
+//# sourceMappingURL=testosterone-info.module.js.map
 
 /***/ })
 

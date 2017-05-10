@@ -7,6 +7,12 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { TestosteroneResultListPage } from '../pages/testosterone-result-list/testosterone-result-list';
+import { TestosteroneInfo } from '../pages/testosterone-info/testosterone-info';
+import { EstrogenInfo } from '../pages/estrogen-info/estrogen-info';
+import { HemoInfo } from '../pages/hemo-info/hemo-info';
+import { PsaInfo } from '../pages/psa-info/psa-info';
+
+
 import { TestosTestCreatePage} from '../pages/testos-test-create/testos-test-create';
 import { TestosteroneGraphPage} from '../pages/testosterone-graph/testosterone-graph';
 import { PsaPage } from '../pages/psa/psa';
@@ -47,7 +53,11 @@ import { AuthCheckProvider } from '../providers/auth-check-provider';
     AboutPage,
     TabsPage,
     TestosteroneGraphPage,
-    TesResultModal
+    TesResultModal,
+    TestosteroneInfo,
+    EstrogenInfo,
+    HemoInfo,
+    PsaInfo
     
     
     
@@ -72,7 +82,11 @@ import { AuthCheckProvider } from '../providers/auth-check-provider';
     AboutPage,
     TabsPage,
     TestosteroneGraphPage,
-    TesResultModal
+    TesResultModal,
+    TestosteroneInfo,
+    EstrogenInfo,
+    HemoInfo,
+    PsaInfo
    
 
     ],
